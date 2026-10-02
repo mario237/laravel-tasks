@@ -50,6 +50,20 @@ Training repo for a junior Laravel backend developer. Every task is a GitHub **i
 
 ## Workflow
 1. Pick the next open issue in the current milestone and assign it to yourself.
-2. Branch from `main`: `feature/<issue-number>-short-name`.
-3. Open a PR using the template, link the issue (`Closes #N`), request review.
-4. Merge after approval; the issue closes automatically.
+2. Every task issue already has its branch, named `feat/<issue-number>-short-name` (e.g. `feat/04-crud-rest-api`). It is written at the top of the issue.
+3. Before starting, bring the branch up to date with `main`:
+   ```bash
+   git fetch origin
+   git checkout feat/04-crud-rest-api
+   git merge origin/main
+   ```
+4. Commit using [Conventional Commits](https://www.conventionalcommits.org/) (`feat: ...`, `fix: ...`, `test: ...`, `docs: ...`, `refactor: ...`).
+5. Open a PR into `main` using the template, link the issue (`Closes #N`), request review.
+6. Merge after approval; the issue closes automatically. Delete the branch after merge.
+
+### Branch naming
+| Type | Pattern | Example |
+|---|---|---|
+| Roadmap task / feature | `feat/<issue>-short-name` | `feat/05-sanctum-auth-policies` |
+| Bug fix | `fix/<issue>-short-name` | `fix/31-task-404-json` |
+| Weekly summary | `docs/weekly-YYYY-WW` | `docs/weekly-2026-41` |
